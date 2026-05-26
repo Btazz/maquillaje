@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sephora – Pretty</title>
+  <meta name="description" content="Productos Sephora en Pretty." />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" width="40" height="40" fill="currentColor"><circle cx="20" cy="20" r="12" /><rect x="18" y="8" width="4" height="10" /></svg></div>
+    <h1 class="site-title">Pretty</h1>
+    <nav id="main-nav" class="site-nav" aria-label="Principal">
+      <ul class="nav-list"><li><a href="../index.html">Inicio</a></li><li><a href="../cart.html">Carrito</a></li></ul>
+      <a href="../cart.html" class="cart-icon" aria-label="Ir al carrito">🛒 <span class="cart-count" id="cart-count">0</span></a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+  </header>
+  <main id="main-content" style="max-width: 1200px; margin: 0 auto; padding: 28px;">
+    <section class="section-block">
+      <div class="section-head"><h2 class="section-title">Sephora – Maquillaje Profesional</h2><p>Selecciona productos y agrégalos al carrito.</p></div>
+      <div class="products-grid">
+        <article class="product-card"><img src="../Img/sephora-lipstick.jpg" alt="Lipstick Sephora" loading="lazy" /><h3>Lipstick Classic</h3><p>$18,990</p><button class="add-to-cart">Agregar al carrito</button></article>
+        <article class="product-card"><img src="../Img/sephora-palette.jpg" alt="Sephora Eye Palette" loading="lazy" /><h3>Eye Palette Nude</h3><p>$29,500</p><button class="add-to-cart">Agregar al carrito</button></article>
+        <article class="product-card"><img src="../Img/sephora-base.jpg" alt="Base Sephora" loading="lazy" /><h3>Base Matte Finish</h3><p>$25,750</p><button class="add-to-cart">Agregar al carrito</button></article>
+      </div>
+    </section>
+  </main>
+  <script src="../script.js"></script>
+</body>
+</html>

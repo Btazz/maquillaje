@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito – Pretty</title>
+  <meta name="description" content="Carrito de compras de Pretty." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="40" height="40" fill="currentColor"><circle cx="20" cy="20" r="12" /><rect x="18" y="8" width="4" height="10" /></svg>
+    </div>
+    <h1 class="site-title">Pretty</h1>
+    <nav id="main-nav" class="site-nav" aria-label="Principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#brands">Marcas</a></li>
+      </ul>
+      <a href="cart.html" class="cart-icon" aria-label="Ir al carrito">🛒 <span class="cart-count" id="cart-count">0</span></a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+  </header>
+  <main id="main-content" style="max-width: 1000px; margin: 0 auto; padding: 28px;">
+    <section class="section-block">
+      <div class="section-head"><h2 class="section-title">Carrito</h2><p>Revisa tus productos seleccionados antes de continuar.</p></div>
+      <div id="cart-items" class="info-card" style="min-height: 180px;"></div>
+      <div style="margin-top: 16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button id="clear-cart" class="btn btn-primary" style="border:none;">Vaciar carrito</button>
+        <a class="btn btn-secondary" href="index.html">Seguir comprando</a>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cartItems = document.getElementById('cart-items');
+      const render = () => {
+        const current = Number(localStorage.getItem('prettyCartCount') || 0);
+        if (!current) {
+          cartItems.innerHTML = '<p>Tu carrito está vacío.</p>';
+        } else {
+          cartItems.innerHTML = `<p>Productos en el carrito: <strong>${current}</strong></p><p>En una versión completa se mostrarían aquí los artículos, cantidades y precios.</p>`;
+        }
+      };
+      render();
+      document.getElementById('clear-cart').addEventListener('click', () => {
+        localStorage.setItem('prettyCartCount', '0');
+        const el = document.getElementById('cart-count');
+        if (el) el.textContent = '0';
+        render();
+      });
+    });
+  </script>
+</body>
+</html>
